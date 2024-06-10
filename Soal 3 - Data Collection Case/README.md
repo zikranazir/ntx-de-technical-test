@@ -46,7 +46,7 @@ Run the following command to build the Docker image:
 ### Run the Docker Container
 Run the following command to execute the Docker container:
 
-
+"
     docker run --rm -v "$(pwd)/datasets:/app/datasets" -v "$(pwd)/scraper.log:/app/scraper.log" fortiguard-scraper
 
 ### This command will:
