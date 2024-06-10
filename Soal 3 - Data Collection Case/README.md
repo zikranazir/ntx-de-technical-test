@@ -34,3 +34,25 @@ In this challenge, you'll be required to perform data scraping on a specified we
     - The `datasets/` directory should also contain a `skipped.json` file detailing any skipped pages during scraping.
     
 Good Luck!
+
+# Build and Run Scraper
+
+###  Build the Docker Image
+
+Run the following command to build the Docker image:
+
+    docker build -t fortiguard-scraper .
+
+### Run the Docker Container
+Run the following command to execute the Docker container:
+
+
+    docker run --rm -v "$(pwd)/datasets:/app/datasets" -v "$(pwd)/scraper.log:/app/scraper.log" fortiguard-scraper
+
+### This command will:
+
+1. Run the Docker container with the built image fortiguard-scraper.
+2. Mount the datasets directory from the host to the container to store the output CSV files.
+3. Mount the scraper.log file from the host to the container to store the log file.
+4. Check the Output
+5. After the container finishes running, you can check the datasets directory for the CSV files and the scraper.log file for the log output.
