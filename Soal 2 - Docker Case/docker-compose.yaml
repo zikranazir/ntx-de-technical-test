@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: ./api
+    ports:
+      - "6000:6000"
+    networks:
+      - app-network
+
+  etl:
+    build:
+      context: ./etl
+    depends_on:
+      - api
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
